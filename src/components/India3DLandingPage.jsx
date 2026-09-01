@@ -474,7 +474,7 @@ export default function India3DLandingPage({
                 overflow: 'hidden', transition: 'all 0.3s ease'
               }}>
                 <img
-                  src="/emblem-bg.png"
+                  src="/emblem-infographic.png"
                   alt="Emblem of India - Symbol of Our Nation Infographic"
                   style={{
                     width: '100%',
