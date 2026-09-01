@@ -443,6 +443,53 @@ export default function India3DLandingPage({
           </section>
 
 
+          {/* ── SECTION 1B: EMBLEM OF INDIA FEATURE SHOWCASE ── */}
+          <section style={{
+            padding: '60px 36px 80px',
+            background: 'radial-gradient(circle at 50% 50%, rgba(255,153,51,0.06) 0%, rgba(7,11,22,0.98) 80%)',
+            borderBottom: '1px solid rgba(255,255,255,0.06)'
+          }}>
+            <div style={{ maxWidth: 1200, margin: '0 auto', textAlign: 'center' }}>
+              <div style={{
+                display: 'inline-flex', alignItems: 'center', gap: 8,
+                background: 'rgba(255,103,31,0.12)', border: '1px solid rgba(255,103,31,0.3)',
+                padding: '6px 20px', borderRadius: 30, fontSize: 12, fontWeight: 900, color: '#FF671F',
+                letterSpacing: 2, marginBottom: 16, textTransform: 'uppercase'
+              }}>
+                🏛️ STATE EMBLEM OF INDIA • 🇮🇳 NATIONAL SYMBOL OF OUR NATION
+              </div>
+              <h2 style={{ fontSize: 'clamp(28px, 4vw, 46px)', fontWeight: 900, color: '#fff', margin: '4px 0 12px' }}>
+                Emblem of India — Symbol of Our Nation
+              </h2>
+              <p style={{ fontSize: 15, color: '#9CA3AF', maxWidth: 740, margin: '0 auto 40px', lineHeight: 1.6 }}>
+                Adapted from the Lion Capital of Ashoka at Sarnath, featuring four Asiatic lions, the Ashoka Chakra wheel of Dharma, and the national motto <em>Satyameva Jayate</em>.
+              </p>
+
+              {/* Emblem Feature Container */}
+              <div style={{
+                background: 'rgba(12,18,34,0.85)',
+                border: '1px solid rgba(255,153,51,0.3)',
+                borderRadius: 28, padding: 24,
+                boxShadow: '0 20px 60px rgba(0,0,0,0.8), 0 0 40px rgba(255,103,31,0.15)',
+                overflow: 'hidden', transition: 'all 0.3s ease'
+              }}>
+                <img
+                  src="/emblem-bg.png"
+                  alt="Emblem of India - Symbol of Our Nation Infographic"
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    maxHeight: 680,
+                    objectFit: 'contain',
+                    borderRadius: 20,
+                    filter: 'drop-shadow(0 10px 30px rgba(0,0,0,0.9))'
+                  }}
+                />
+              </div>
+            </div>
+          </section>
+
+
           {/* ── SECTION 2: POPULAR PLACES & WONDERS OF INDIA (FULL-WIDTH SCROLLABLE) ── */}
           <section ref={wondersSectionRef} style={{
             padding: '80px 36px',
