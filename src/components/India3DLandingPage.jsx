@@ -366,11 +366,15 @@ export default function India3DLandingPage({
 
           {/* ── SECTION 1: HERO ENTRANCE ── */}
           <section style={{
-            minHeight: '85vh',
+            minHeight: '90vh',
             display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
-            textAlign: 'center', padding: '40px 24px',
-            background: 'radial-gradient(circle at 50% 40%, rgba(255,103,31,0.08) 0%, rgba(7,11,22,0.95) 75%)',
-            position: 'relative'
+            textAlign: 'center', padding: '60px 24px',
+            backgroundImage: `linear-gradient(to bottom, rgba(7,11,22,0.72) 0%, rgba(7,11,22,0.85) 60%, rgba(7,11,22,0.98) 100%), url('/india-hero-bg.png')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center top',
+            backgroundRepeat: 'no-repeat',
+            position: 'relative',
+            boxShadow: 'inset 0 0 100px rgba(7,11,22,0.9)'
           }}>
             <div style={{
               display: 'inline-flex', alignItems: 'center', gap: 8,
