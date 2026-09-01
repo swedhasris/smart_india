@@ -368,9 +368,13 @@ export default function India3DLandingPage({
           <section style={{
             minHeight: '85vh',
             display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
-            textAlign: 'center', padding: '40px 24px',
-            background: 'radial-gradient(circle at 50% 40%, rgba(255,103,31,0.08) 0%, rgba(7,11,22,0.95) 75%)',
-            position: 'relative'
+            textAlign: 'center', padding: '60px 24px',
+            backgroundImage: `linear-gradient(to bottom, rgba(7,11,22,0.82), rgba(7,11,22,0.94)), url('/emblem-bg.png')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            position: 'relative',
+            boxShadow: 'inset 0 0 120px rgba(7,11,22,0.95)'
           }}>
             <div style={{
               display: 'inline-flex', alignItems: 'center', gap: 8,
