@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>INDIA – ONE NATION, MANY STORIES | National Portal Directory</title>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome 6 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    /* =========================================================
+       CSS VARIABLES & RESET
+       ========================================================= */
+    :root {
+      --bg-main: #f5f7fa;
+      --bg-white: #ffffff;
+      --bg-input: #f9fbfd;
+      --navy-header: #0b1a33;
+      --navy-dark: #071224;
+      --accent-saffron: #f79e1b;
+      --accent-saffron-hover: #e08b12;
+      --accent-green: #138808;
+      --text-dark: #1e2a41;
+      --text-muted: #6b7a8f;
+      --border-light: #e6edf4;
+      --border-focus: #f79e1b;
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 16px rgba(11, 26, 51, 0.08);
+      --radius-pill: 50px;
+      --radius-card: 12px;
+      --radius-sm: 8px;
+      --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-main);
+      color: var(--text-dark);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* =========================================================
+       1. TOP HEADER BAR (DARK NAVY)
+       ========================================================= */
+    .top-header {
+      background-color: var(--navy-header);
+      color: #ffffff;
+      padding: 14px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .brand-section {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .emblem-wrapper {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .emblem-icon {
+      color: var(--accent-saffron);
+      font-size: 18px;
+    }
+
+    .site-title {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.6px;
+      color: #ffffff;
+      text-transform: uppercase;
+    }
+
+    .accessibility-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #e2e8f0;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .accessibility-badge:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    /* =========================================================
+       2. BREADCRUMB BAR (WHITE)
+       ========================================================= */
+    .breadcrumb-bar {
+      background-color: var(--bg-white);
+      border-bottom: 1px solid var(--border-light);
+      padding: 12px 32px;
+      font-size: 13px;
+    }
+
+    .breadcrumb-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .breadcrumb-link {
+      color: var(--text-muted);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .breadcrumb-link:hover {
+      color: var(--navy-header);
+      text-decoration: underline;
+    }
+
+    .breadcrumb-separator {
+      color: #cbd5e1;
+      font-size: 11px;
+    }
+
+    .breadcrumb-current {
+      color: var(--accent-saffron);
+      font-weight: 700;
+    }
+
+    /* =========================================================
+       3. MAIN CONTENT CONTAINER
+       ========================================================= */
+    .main-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 36px 20px 48px;
+      width: 100%;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+    }
+
+    /* =========================================================
+       4. SEARCH SECTION (PILL INPUT)
+       ========================================================= */
+    .search-section {
+      width: 100%;
+      max-width: 700px;
+    }
+
+    .search-wrapper {
+      position: relative;
+      width: 100%;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 22px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #94a3b8;
+      font-size: 16px;
+      pointer-events: none;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 14px 24px 14px 52px;
+      font-size: 15px;
+      font-family: var(--font-family);
+      color: var(--text-dark);
+      background-color: var(--bg-input);
+      border: 1.5px solid var(--border-light);
+      border-radius: var(--radius-pill);
+      outline: none;
+      transition: all 0.25s ease;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+    }
+
+    .search-input::placeholder {
+      color: #94a3b8;
+      font-weight: 400;
+    }
+
+    .search-input:focus {
+      border-color: var(--border-focus);
+      background-color: var(--bg-white);
+      box-shadow: 0 0 0 4px rgba(247, 158, 27, 0.15);
+    }
+
+    /* =========================================================
+       5. METRICS ROW (4 STAT CARDS)
+       ========================================================= */
+    .metrics-section {
+      width: 100%;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      width: 100%;
+    }
+
+    .stat-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-card);
+      padding: 20px 18px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--accent-saffron);
+    }
+
+    .stat-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .stat-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .stat-value {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--navy-header);
+      letter-spacing: -0.2px;
+      line-height: 1.2;
+    }
+
+    /* =========================================================
+       6. ACTION / EXPLORATION ROW (CLEAN CARDS/BUTTONS)
+       ========================================================= */
+    .exploration-section {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .exploration-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-card);
+      padding: 16px 24px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      max-width: 780px;
+      width: 100%;
+    }
+
+    .exploration-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 18px;
+      border-radius: var(--radius-sm);
+      background: var(--bg-input);
+      border: 1px solid var(--border-light);
+      color: var(--text-dark);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .exploration-item .icon {
+      color: var(--accent-saffron);
+      font-size: 14px;
+      transition: transform 0.2s ease;
+    }
+
+    .exploration-item:hover {
+      background: var(--bg-white);
+      border-color: var(--accent-saffron);
+      color: var(--accent-saffron-hover);
+      box-shadow: 0 2px 8px rgba(247, 158, 27, 0.12);
+    }
+
+    .exploration-item:hover .icon {
+      transform: translateX(3px);
+    }
+
+    .exploration-divider {
+      color: #cbd5e1;
+      font-weight: 300;
+    }
+
+    /* =========================================================
+       7. OFFICIAL SUBTLE FOOTER
+       ========================================================= */
+    .official-footer {
+      background: var(--bg-white);
+      border-top: 1px solid var(--border-light);
+      padding: 20px 32px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: auto;
+    }
+
+    .footer-accent-bar {
+      height: 3px;
+      width: 80px;
+      margin: 0 auto 12px;
+      display: flex;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .bar-saffron { flex: 1; background-color: var(--accent-saffron); }
+    .bar-white   { flex: 1; background-color: #cbd5e1; }
+    .bar-green   { flex: 1; background-color: var(--accent-green); }
+
+    /* =========================================================
+       8. RESPONSIVE BREAKPOINTS (MOBILE & TABLET)
+       ========================================================= */
+    @media (max-width: 860px) {
+      .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .top-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding: 14px 16px;
+        text-align: center;
+      }
+
+      .site-title {
+        font-size: 14px;
+      }
+
+      .breadcrumb-bar {
+        padding: 10px 16px;
+      }
+
+      .main-container {
+        padding: 24px 16px 36px;
+        gap: 24px;
+      }
+
+      .metrics-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .exploration-card {
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px;
+      }
+
+      .exploration-divider {
+        display: none;
+      }
+
+      .exploration-item {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =======================================================
+       1. TOP HEADER BAR (DARK NAVY)
+       ======================================================= -->
+  <header class="top-header" role="banner">
+    <div class="brand-section">
+      <div class="emblem-wrapper" aria-hidden="true">
+        <i class="fa-solid fa-dharmachakra emblem-icon"></i>
+      </div>
+      <h1 class="site-title">INDIA – ONE NATION, MANY STORIES</h1>
+    </div>
+
+    <button class="accessibility-badge" type="button" aria-label="Toggle Accessible View">
+      <i class="fa-solid fa-eye" aria-hidden="true"></i>
+      <span>AccessibleView</span>
+    </button>
+  </header>
+
+  <!-- =======================================================
+       2. BREADCRUMB BAR (WHITE)
+       ======================================================= -->
+  <nav class="breadcrumb-bar" aria-label="Breadcrumb">
+    <div class="breadcrumb-container">
+      <a href="#home" class="breadcrumb-link">Home</a>
+      <span class="breadcrumb-separator" aria-hidden="true">/</span>
+      <span class="breadcrumb-current" aria-current="page">Union Government</span>
+    </div>
+  </nav>
+
+  <!-- =======================================================
+       3. MAIN CONTENT CONTAINER
+       ======================================================= -->
+  <main class="main-container" role="main">
+
+    <!-- SEARCH SECTION -->
+    <section class="search-section" aria-label="Portal Search">
+      <div class="search-wrapper">
+        <i class="fa-solid fa-magnifying-glass search-icon" aria-hidden="true"></i>
+        <input
+          type="search"
+          class="search-input"
+          placeholder="Search by Keyword."
+          aria-label="Search by Keyword"
+        />
+      </div>
+    </section>
+
+    <!-- METRICS ROW (4 STAT CARDS) -->
+    <section class="metrics-section" aria-label="National Statistics">
+      <div class="metrics-grid">
+        
+        <!-- Metric 1: Independence -->
+        <article class="stat-card">
+          <span class="stat-label">Independence</span>
+          <span class="stat-value">15 August 1947</span>
+        </article>
+
+        <!-- Metric 2: Republic -->
+        <article class="stat-card">
+          <span class="stat-label">Republic</span>
+          <span class="stat-value">26 January 1950</span>
+        </article>
+
+        <!-- Metric 3: States -->
+        <article class="stat-card">
+          <span class="stat-label">States</span>
+          <span class="stat-value">28 States</span>
+        </article>
+
+        <!-- Metric 4: Districts -->
+        <article class="stat-card">
+          <span class="stat-label">Districts</span>
+          <span class="stat-value">700+ Districts</span>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ACTION / EXPLORATION ROW -->
+    <section class="exploration-section" aria-label="Exploration Links">
+      <div class="exploration-card">
+        
+        <!-- Link 1 -->
+        <a href="#history" class="exploration-item" role="button">
+          <span>Explore India Through Time –</span>
+          <i class="fa-solid fa-arrow-right icon" aria-hidden="true"></i>
+        </a>
+
+        <span class="exploration-divider" aria-hidden="true">•</span>
+
+        <!-- Link 2 -->
+        <a href="#heritage" class="exploration-item" role="button">
+          <span>India's Heritage &amp; Culture – Click to Reveal</span>
+          <i class="fa-solid fa-arrow-pointer icon" aria-hidden="true"></i>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =======================================================
+       4. OFFICIAL FOOTER
+       ======================================================= -->
+  <footer class="official-footer" role="contentinfo">
+    <div class="footer-accent-bar" aria-hidden="true">
+      <div class="bar-saffron"></div>
+      <div class="bar-white"></div>
+      <div class="bar-green"></div>
+    </div>
+    <p>National Portal &amp; Integrated Government Directory • Government of India</p>
+  </footer>
+
+</body>
+</html>
